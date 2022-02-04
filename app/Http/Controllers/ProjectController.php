@@ -25,7 +25,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $project = Project::create($request->only('code', 'name', 'start_date', 'finish_date', 'condition'));
-        return redirect()->route('projects.index');
+        return redirect()->route('projects.show', $project->id)->with('success', 'Proyecto creado correctamente');
     }
 
     public function show(Project $project)
@@ -42,7 +42,8 @@ class ProjectController extends Controller
 
     public function update(Request $request, Project $project)
     {
-        //
+        $project->update($request->only('code', 'name', 'start_date', 'finish_date', 'condition'));
+        return redirect()->route('projects.show', $project->id)->with('success', 'Projecto actualizado correctamente');
     }
 
     public function destroy(Project $project)

@@ -18,7 +18,7 @@
               <div class="col-md-4">
                 <div class="card card-user">
                   <div class="card-body">
-                    <p class="card-text">
+                    <div class="card-text">
                       <div class="author">
                         <div class="block block-one"></div>
                         <div class="block block-two"></div>
@@ -29,12 +29,12 @@
                           <h5 class="title mt-3">Rol: {{ $role->name }}</h5>
                         </a>
                         <p class="description">
-                          {{ _('Ceo/Co-Founder') }} <br>
+                          {{ __('Ceo/Co-Founder') }} <br>
                           {{ $role->guard_name }} <br>
                           {{ $role->created_at }}
                         </p>
                       </div>
-                    </p>
+                    </div>
                     <div class="card-description">
                       @forelse ($role->permissions as $permission)
                           <span class="badge rounded-pill bg-dark text-white">{{ $permission->name }}</span>

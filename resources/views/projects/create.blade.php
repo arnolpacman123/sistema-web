@@ -36,7 +36,7 @@
                                 <div class="row">
                                     <label for="start_date" class="col-sm-2 col-form-label">Fecha inicio del proyecto</label>
                                     <div class="col-sm-7">
-                                        <input type="text" id="start_date" class="form-control date" name="start_date"
+                                        <input type="text" id="start_date" class="form-control" name="start_date"
                                                placeholder="Seleccione la fecha de inicio del proyecto" value="{{ old('start_date') }}">
                                         <script>
                                             $("#start_date").flatpickr();
@@ -50,7 +50,7 @@
                                 <div class="row">
                                     <label for="finish_date" class="col-sm-2 col-form-label">Fecha fin del proyecto</label>
                                     <div class="col-sm-7">
-                                        <input type="text" id="finish_date" class="form-control date" name="finish_date"
+                                        <input type="text" id="finish_date" class="form-control" name="finish_date"
                                                placeholder="Seleccione la fecha de fin del proyecto" value="{{ old('finish_date') }}">
                                         <script>
                                             $("#finish_date").flatpickr();
@@ -64,8 +64,10 @@
                                 <div class="row">
                                     <label for="condition" class="col-sm-2 col-form-label">Condición del proyecto</label>
                                     <div class="col-sm-7">
-                                        <input type="text" id="condition" class="form-control" name="condition"
-                                               placeholder="Ingrese la condición del proyecto" value="{{ old('condition') }}">
+                                        <select name="condition" id="condition" class="form-control custom-select">
+                                            <option value="EN PROCESO">EN PROCESO</option>
+                                            <option value="FINALIZADO">FINALIZADO</option>
+                                        </select>
                                         @if ($errors->has('condition'))
                                             <span class="error text-danger" for="input-condition">{{ $errors->first('condition') }}</span>
                                         @endif
